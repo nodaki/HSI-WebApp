@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "app"
+version = "0.1.0"
+description = ""
+authors = ["akihiro noda <aki.ap11@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+uvicorn = "^0.15.0"
+fastapi = "^0.68.1"
+python-multipart = "^0.0.5"
+email-validator = "^1.1.3"
+requests = "^2.26.0"
+celery = "^5.1.2"
+passlib = {version = "^1.7.4", extras = ["bcrypt"]}
+tenacity = "^8.0.1"
+emails = "^0.6"
+raven = "^6.10.0"
+gunicorn = "^20.1.0"
+Jinja2 = "^3.0.1"
+psycopg2-binary = "^2.9.1"
+alembic = "^1.7.1"
+SQLAlchemy = "^1.4.23"
+python-jose = {version = "^3.3.0", extras = ["cryptography"]}
+pydantic = {version = "^1.8.2", extras = ["dotenv"]}
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+pysen = {version = "^0.9.1", extras = ["lint"]}
+
+[tool.pysen]
+version = "0.9"
+
+[tool.pysen.lint]
+enable_black = true
+enable_flake8 = true
+enable_isort = true
+line_length = 88
+py_version = "py38"
+isort_known_first_party = ["app"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
